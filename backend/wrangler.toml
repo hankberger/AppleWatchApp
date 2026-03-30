@@ -1,0 +1,8 @@
+name = "firstwatch-backend"
+main = "src/index.ts"
+compatibility_date = "2024-12-01"
+workers_dev = true
+
+[[r2_buckets]]
+binding = "AUDIO_BUCKET"
+bucket_name = "firstwatch-audio"
