@@ -56,6 +56,16 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		AAAA00012F79966A00C5586E /* FirstWatchApp iOS */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "FirstWatchApp iOS";
+			sourceTree = "<group>";
+		};
+		AAAA00022F79966A00C5586E /* Shared */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		7CF37E5F2F79966800C5586E /* FirstWatchApp Watch App */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = "FirstWatchApp Watch App";
@@ -74,6 +84,13 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		AAAA00042F79966A00C5586E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7CF37E582F79966800C5586E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -101,6 +118,8 @@
 		7CF37E4E2F79966800C5586E = {
 			isa = PBXGroup;
 			children = (
+				AAAA00012F79966A00C5586E /* FirstWatchApp iOS */,
+				AAAA00022F79966A00C5586E /* Shared */,
 				7CF37E5F2F79966800C5586E /* FirstWatchApp Watch App */,
 				7CF37E6D2F79966A00C5586E /* FirstWatchApp Watch AppTests */,
 				7CF37E772F79966A00C5586E /* FirstWatchApp Watch AppUITests */,
@@ -126,6 +145,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7CF37E822F79966A00C5586E /* Build configuration list for PBXNativeTarget "FirstWatchApp" */;
 			buildPhases = (
+				AAAA00032F79966A00C5586E /* Sources */,
+				AAAA00042F79966A00C5586E /* Frameworks */,
 				7CF37E532F79966800C5586E /* Resources */,
 				7CF37E812F79966A00C5586E /* Embed Watch Content */,
 			);
@@ -134,12 +155,16 @@
 			dependencies = (
 				7CF37E5E2F79966800C5586E /* PBXTargetDependency */,
 			);
+			fileSystemSynchronizedGroups = (
+				AAAA00012F79966A00C5586E /* FirstWatchApp iOS */,
+				AAAA00022F79966A00C5586E /* Shared */,
+			);
 			name = FirstWatchApp;
 			packageProductDependencies = (
 			);
 			productName = FirstWatchApp;
 			productReference = 7CF37E552F79966800C5586E /* FirstWatchApp.app */;
-			productType = "com.apple.product-type.application.watchapp2-container";
+			productType = "com.apple.product-type.application";
 		};
 		7CF37E5A2F79966800C5586E /* FirstWatchApp Watch App */ = {
 			isa = PBXNativeTarget;
@@ -155,6 +180,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				7CF37E5F2F79966800C5586E /* FirstWatchApp Watch App */,
+				AAAA00022F79966A00C5586E /* Shared */,
 			);
 			name = "FirstWatchApp Watch App";
 			packageProductDependencies = (
@@ -221,6 +247,7 @@
 				TargetAttributes = {
 					7CF37E542F79966800C5586E = {
 						CreatedOnToolsVersion = 26.2;
+						LastSwiftMigration = 2620;
 					};
 					7CF37E5A2F79966800C5586E = {
 						CreatedOnToolsVersion = 26.2;
@@ -289,6 +316,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		AAAA00032F79966A00C5586E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7CF37E572F79966800C5586E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -519,34 +553,66 @@
 		7CF37E832F79966A00C5586E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WY2FX658M4;
-				INFOPLIST_KEY_CFBundleDisplayName = FirstWatchApp;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = FirstWatch;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = hankberger.FirstWatchApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		7CF37E842F79966A00C5586E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WY2FX658M4;
-				INFOPLIST_KEY_CFBundleDisplayName = FirstWatchApp;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = FirstWatch;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = hankberger.FirstWatchApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

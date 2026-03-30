@@ -133,6 +133,28 @@ async function handleLinkAccount(request: Request, env: Env): Promise<Response> 
   return Response.json({ moved, newUserId });
 }
 
+async function handleListRecordings(request: Request, env: Env): Promise<Response> {
+  const url = new URL(request.url);
+  const userId = url.searchParams.get("userId") ?? "";
+
+  if (!userId || !/^[a-zA-Z0-9.-]+$/.test(userId)) {
+    return Response.json(
+      { error: "Missing or invalid userId parameter" },
+      { status: 400 }
+    );
+  }
+
+  const listed = await env.AUDIO_BUCKET.list({ prefix: `${userId}/` });
+
+  const recordings = listed.objects.map((obj) => ({
+    key: obj.key,
+    size: obj.size,
+    uploadedAt: obj.customMetadata?.uploadedAt ?? obj.uploaded.toISOString(),
+  }));
+
+  return Response.json({ recordings });
+}
+
 function getExtension(contentType: string): string {
   const map: Record<string, string> = {
     "audio/mpeg": ".mp3",
